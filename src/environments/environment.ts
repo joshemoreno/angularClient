@@ -3,7 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  // url's
+  api:'https://xgqvakimy5.execute-api.us-west-1.amazonaws.com/dev/AWSTallerDos/dev',
+  localUri: 'http://localhost',
+  
+  // endPoints POST
+  userEndPoint:'/userRegister',
+  topicEndPoint:'/topicsRegister',
+  assistanceEndPoint:'/assistanceRegister',
+  
+  // endPoints GET
+  getTopics: '/getTopic',
+  getParams: '/getParams',
+  
+  // others
+  idAppAzure: '9e601498-f99c-4bc6-9491-9ca457d16621',
+  port: '4200',
+  portBack: '3000',
+  endpointSMAL: '/login'
 };
 
 /*

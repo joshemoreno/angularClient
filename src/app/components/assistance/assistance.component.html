@@ -1,0 +1,29 @@
+<div class="container p-4">
+    <div class="card card-body">
+      <div class="row"> 
+      <div class="col-md-6">
+        <div class="row">
+            <h2 style="text-align:center">Assistance register</h2>
+        </div>
+        <img
+        class="center"
+        width="200"
+        alt="Angular Logo"
+        src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+      />
+      </div>
+      <div class="col-md-6">
+      <form [formGroup]="assistanceForm" (ngSubmit)="onSaveForm()">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Enter your identification number" formControlName="id">
+          <select  type="text" class="form-select" placeholder="Enter the topic" formControlName="topic">
+            <option value="" disabled selected hidden>Please select a topic</option>
+            <option *ngFor="let topic of topics" value="{{topic.id.S}}">{{topic.id.S}}</option>
+          </select>
+          <button type="submit" class="btn btn-primary mt-5">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
