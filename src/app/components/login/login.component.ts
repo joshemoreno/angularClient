@@ -3,6 +3,7 @@ import { LoginService } from '../../services/login/login.service';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2'
 import { LoginReq, ResponseLogin } from 'src/app/models/Login.interface';
+import { ActivatedRoute } from '@angular/router';
 
 
 @Component({
@@ -21,19 +22,17 @@ export class LoginComponent implements OnInit {
 
   // loginForm: FormGroup;
 
-  constructor() { 
+  constructor(private LogUser:LoginService, private router: ActivatedRoute) { 
     // this.loginForm = this.createFormGroup();
   }
 
   ngOnInit(): void {
+    this.router
+    .queryParams
+    .subscribe((data: any)=>{
+      this.LogUser.LoginUser3(data.code,data.session_state,data.client_info)
+    });
+    // window.location.href = '';
   }
-
-  // // onResetForm(){
-  // //   this.loginForm.reset();
-  // // }
-
-  // onSubmitForm(){
-  //     this.LogUser.LoginUser();
-  // }
 
 }

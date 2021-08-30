@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MsalService } from '@azure/msal-angular';
+import { ActivatedRoute, ActivatedRouteSnapshot } from '@angular/router';
+
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Component({
@@ -9,10 +10,14 @@ import { LoginService } from 'src/app/services/login/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private LogUser:LoginService, private msalService: MsalService) { }
+  constructor(private LogUser:LoginService, private router: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.LogUser.setSeccion();
+    let storedToken = localStorage.getItem('Token');
+    if(!storedToken){
+      console.log('Token no found');
+    }
+    // this.LogUser.LoginUser2();
   }
 
   onSubmitForm(){

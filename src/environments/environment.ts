@@ -21,7 +21,7 @@ export const environment = {
   idAppAzure: '9e601498-f99c-4bc6-9491-9ca457d16621',
   port: '4200',
   portBack: '3000',
-  endpointSMAL: '/login'
+  endpointSMAL: '/'
 };
 
 /*

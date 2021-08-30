@@ -8,7 +8,7 @@ import { UserService } from './services/userService/user-service.service';
 import { TopicComponent } from './components/topic/topic.component';
 import { TopicService } from './services/topicService/topic-service.service';
 import { AssistanceComponent } from './components/assistance/assistance.component';
-import { RouterModule, Routes } from '@angular/router'
+import { RouterModule, Routes } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
 import { MsalModule, MsalService, MSAL_INSTANCE } from '@azure/msal-angular';
@@ -30,6 +30,7 @@ const routers: Routes = [
   {path: '', component: UserComponent, pathMatch: 'full' },
   {path: 'topics', component: TopicComponent, canActivate: [MaslGuard]},
   {path: 'assistance', component: AssistanceComponent, canActivate: [MaslGuard]},
+  {path: 'logOn', component: LoginComponent},
   {path: 'login', component: LoginComponent, canActivate: [MaslGuard]},
   {path: '**', redirectTo:'/', pathMatch: 'full' }
 ];
